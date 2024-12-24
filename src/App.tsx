@@ -60,7 +60,9 @@ export const App: React.FC = () => {
     setIsReversed(false);
   };
 
-  const isInitialOrder = JSON.stringify(goods) === JSON.stringify(initialGoods);
+  const isInitialOrder = goods.every(
+    (good, index) => good === initialGoods[index],
+  );
 
   return (
     <div className="section content">
